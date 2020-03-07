@@ -6,9 +6,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-});
-
-
 // description box: id - new-task-description
 // submit button = type - submit 
 // after submit - go to ul with id = "tasks"
