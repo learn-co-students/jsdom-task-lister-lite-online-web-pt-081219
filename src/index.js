@@ -11,13 +11,13 @@ document.addEventListener("DOMContentLoaded", () => {
   submit.addEventListener('click', function(event) {
       event.preventDefault();
       const task = form.querySelector('input#new-task-description').value;
-    document.querySelector('ul#tasks').innerHTML += `<li id="${task}">${task} <button id="${task}" onClick="deleteMe()">X</button></li>`;
+      document.querySelector('ul#tasks').innerHTML += `<li id="${task}">${task} <button id="${task}">X</button></li>`;
   });
   
-  function deleteMe() {
-    let deleteId = list.querySelector(`li#${event.srcElement.id}`);
+  function deleteMe(event) {
+    let deleteId = list.querySelector(`li#${event.target.id}`);
     list.removeChild(deleteId);
   };
-    
+  list.addEventListener('click', deleteMe);
 
 });
