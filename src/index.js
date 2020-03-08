@@ -1,16 +1,34 @@
 document.addEventListener("DOMContentLoaded", () => {
   // your code here
   const newTaskDescription = document.getElementById("new-task-description")
-  const tasks = document.getElementById("tasks")
   const form = document.getElementById("create-task-form")
-  console.log("form", form)
+  const newTaskPriority = document.getElementById("new-task-priority")
+  const tasks = document.getElementById("tasks")
 
-  form.addEventListener("submit", function(event) {
-    event.preventDefault();
-    const li = document.createElement("li")
-    li.innerHTML = newTaskDescription.value
-    console.log("submit", newTaskDescription.value)
-    tasks.appendChild(li);
-  }, false);
-
+  form.addEventListener("submit", createNewTask);
 });
+
+const createNewTask = event => {
+  console.log("event")
+  event.preventDefault();
+  const newTaskDescription = document.getElementById("new-task-description")
+  const newTask = document.createElement("li")
+  newTask.innerHTML = newTaskDescription.value
+  removeTask(newTask)
+  appendNewTask(newTask);
+  // event.target.reset();
+};
+
+const appendNewTask = task => {
+  document.getElementById("tasks").appendChild(task)
+};
+
+  function removeTask(parent) {
+    const btn = document.createElement("BUTTON");
+    parent.appendChild(btn)
+    btn.addEventListener("click", function(event){
+      event.preventDefault()
+      console.log("hello")
+      parent.remove()
+    })
+  }
