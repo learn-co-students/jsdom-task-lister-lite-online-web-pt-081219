@@ -1,17 +1,29 @@
-document.addEventListener("DOMContentLoaded", () => {
-  let form = document.getElementById("create-task-form")
-  console.log ("this is working", form )
+// document.addEventListener("DOMContentLoaded", () => {
+//   //grab all the necessary DOM elements
 
-  let textBox = document.getElementById("new-task description")
+//   //form and relevant input fields
+//   const newTaskForm = document.getElementById("create-task-form");
+//   const newTaskDescription = document.getElementById("new-task-description");
+//   const newTaskPriority = document.getElementById("new-task-priority");
 
-  let tasks = document.getElementById("tasks")
+//   //ul where new tasks will live on the DOM
+//   const newTaskUl = document.getElementById("tasks");
 
-  form.addEventListener("submit", function(event){
-    event.preventDefault()
-    console.log("button clicked")
-    let li = document.createElement("li")
-    li.innerText = textBox.value
-    tasks.append(li)
+//   //attach event listeners
+//   newTaskForm.addEventListener("submit", createNewTask);
+// });
 
-  });
-});
+// const createNewTask = event => {
+//   event.preventDefault();
+//   //stop form from trying to submit
+//   const newTaskDescription = document.getElementById("new-task-description");
+//   const newTask = document.createElement("li");
+//   newTask.innerText = newTaskDescription.value;
+
+//   appendNewTask(newTask);
+//   event.target.reset();
+// };
+
+// const appendNewTask = task => {
+//   document.getElementById("tasks").appendChild(task);
+// };
